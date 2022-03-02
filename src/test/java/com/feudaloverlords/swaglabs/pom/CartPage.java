@@ -6,20 +6,23 @@ import org.openqa.selenium.WebDriver;
 public class CartPage extends Page {
 
     public enum Links implements LinksInterface {
-        INVENTORY {
+        CONTINUE_SHOPPING {
             @Override
             public Page getPage(WebDriver driver) {
-                driver.findElement(By.xpath("//*[@id=\"continue-shopping\"]")).click();
+                driver.findElement(BY_CONTINUE_SHOPPING).click();
                 return new InventoryPage(driver);
             }
         },
-        CHECKOUT_ONE {
+        CHECKOUT {
             @Override
             public Page getPage(WebDriver driver) {
-                driver.findElement(By.xpath("//*[@id=\"checkout\"]")).click();
+                driver.findElement(BY_CHECKOUT).click();
                 return new CheckoutOnePage(driver);
             }
         };
+
+        private static final By BY_CONTINUE_SHOPPING = new By.ById("continue-shopping"),
+                                BY_CHECKOUT = new By.ById("checkout");
     }
 
     public CartPage(WebDriver driver) {
