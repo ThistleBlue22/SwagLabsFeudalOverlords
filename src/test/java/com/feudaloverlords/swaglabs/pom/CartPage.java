@@ -7,36 +7,33 @@ import java.util.function.Function;
 
 public class CartPage extends Page {
 
-    public enum Links {
+    public enum Links implements LinksInterface {
         INVENTORY {
             @Override
-            Page getPage(WebDriver driver) {
+            public Page getPage(WebDriver driver) {
                 driver.findElement(By.xpath("//*[@id=\"continue-shopping\"]")).click();
                 return new InventoryPage(driver);
             }
         },
         CHECKOUT {
             @Override
-            Page getPage(WebDriver driver) {
-                return null;
+            public Page getPage(WebDriver driver) {
+                driver.findElement(By.xpath("")).click();
+                return new CheckoutStepOnePage(driver);
             }
         },
         HOMEPAGE {
             @Override
-            Page getPage(WebDriver driver) {
-                return null;
+            public Page getPage(WebDriver driver) {
+                driver.findElement(By.xpath("")).click();
+                driver.findElement(By.xpath("")).click();
+                return new HomePage(driver);
             }
         };
-
-        abstract Page getPage(WebDriver driver);
 
     }
 
     public CartPage(WebDriver driver) {
         super(driver, "https://www.saucedemo.com/cart.html");
-    }
-
-    public Page getPage(Links l) {
-        return l.getPage(driver);
     }
 }

@@ -18,4 +18,8 @@ public abstract class Page {
     public String getUrl() {
         return url;
     }
+
+    public Page getPage(LinksInterface l) {
+        return l.getPage(driver);
+    }
 }
