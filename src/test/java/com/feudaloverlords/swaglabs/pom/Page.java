@@ -3,8 +3,8 @@ package com.feudaloverlords.swaglabs.pom;
 import org.openqa.selenium.WebDriver;
 
 public abstract class Page {
-    private WebDriver driver;
-    private final String url;
+    protected WebDriver driver;
+    protected final String url;
 
     protected Page(WebDriver driver, String url) {
         this.driver = driver;
