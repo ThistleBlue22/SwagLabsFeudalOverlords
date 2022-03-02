@@ -2,7 +2,7 @@ package com.feudaloverlords.swaglabs.pom;
 
 import org.openqa.selenium.WebDriver;
 
-public abstract class Page {
+public class Page {
     protected WebDriver driver;
     protected final String url;
 

@@ -15,22 +15,50 @@ public class CartPage extends Page {
                 return new InventoryPage(driver);
             }
         },
-        CHECKOUT {
+        CHECKOUT_ONE {
             @Override
             public Page getPage(WebDriver driver) {
-                driver.findElement(By.xpath("")).click();
-                return new CheckoutStepOnePage(driver);
+                driver.findElement(By.xpath("//*[@id=\"checkout\"]")).click();
+                return new CheckoutOnePage(driver);
             }
         },
         HOMEPAGE {
             @Override
             public Page getPage(WebDriver driver) {
-                driver.findElement(By.xpath("")).click();
-                driver.findElement(By.xpath("")).click();
+                driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
+                driver.findElement(By.linkText(LinksInterface.LINKTEXT_LOGOUT)).click();
                 return new HomePage(driver);
             }
-        };
-
+        },
+        ABOUT {
+            @Override
+            public Page getPage(WebDriver driver) {
+                driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
+                driver.findElement(By.linkText(LinksInterface.LINKTEXT_ABOUT)).click();
+                return new Page(driver, LinksInterface.URL_ABOUT);
+            }
+        },
+        TWITTER {
+            @Override
+            public Page getPage(WebDriver driver) {
+                driver.findElement(By.linkText(LinksInterface.LINKTEXT_TWITTER)).click();
+                return new Page(driver, LinksInterface.URL_TWITTER);
+            }
+        },
+        FACEBOOK {
+            @Override
+            public Page getPage(WebDriver driver) {
+                driver.findElement(By.linkText(LinksInterface.LINKTEXT_FACEBOOK)).click();
+                return new Page(driver, LinksInterface.URL_FACEBOOK);
+            }
+        },
+        LINKEDIN {
+            @Override
+            public Page getPage(WebDriver driver) {
+                driver.findElement(By.linkText(LinksInterface.LINKTEXT_LINKEDIN)).click();
+                return new Page(driver, LinksInterface.URL_LINKEDIN);
+            }
+        }
     }
 
     public CartPage(WebDriver driver) {
