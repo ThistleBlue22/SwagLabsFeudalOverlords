@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.feudaloverlords.swaglabs</groupId>
-  <artifactId>SwagLabsFuedalOverlords</artifactId>
+  <artifactId>SwagLabsFeudalOverlords</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>SwagLabsFuedalOverlords</name>
+  <name>SwagLabsFeudalOverlords</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -24,6 +24,21 @@
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
       <version>5.8.2</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>7.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>7.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-core</artifactId>
+      <version>7.2.3</version>
     </dependency>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
