@@ -7,7 +7,7 @@ public enum GlobalLinks implements LinksInterface{
     HOMEPAGE {
         @Override
         public Page getPage(WebDriver driver) {
-            driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
+            driver.findElement(BY_BURGER_MENU).click();
             driver.findElement(BY_LOGOUT).click();
             return new HomePage(driver);
         }
@@ -15,7 +15,7 @@ public enum GlobalLinks implements LinksInterface{
     INVENTORY {
         @Override
         public Page getPage(WebDriver driver) {
-            driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
+            driver.findElement(BY_BURGER_MENU).click();
             driver.findElement(BY_INVENTORY).click();
             return new InventoryPage(driver);
         }
@@ -23,9 +23,16 @@ public enum GlobalLinks implements LinksInterface{
     ABOUT {
         @Override
         public Page getPage(WebDriver driver) {
-            driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
+            driver.findElement(BY_BURGER_MENU).click();
             driver.findElement(BY_ABOUT).click();
             return new Page(driver, URL_ABOUT);
+        }
+    },
+    CART {
+        @Override
+        public Page getPage(WebDriver driver) {
+            driver.findElement(BY_CART).click();
+            return new CartPage(driver);
         }
     },
     TWITTER {
@@ -55,9 +62,11 @@ public enum GlobalLinks implements LinksInterface{
             URL_TWITTER = "https://twitter.com/saucelabs",
             URL_FACEBOOK = "https://www.facebook.com/saucelabs",
             URL_LINKEDIN = "https://www.linkedin.com/company/sauce-labs/";
-    private static final By BY_INVENTORY = new By.ByLinkText("All Items"),
+    private static final By BY_BURGER_MENU = new By.ByXPath("//*[@id=\"react-burger-menu-btn\"]"),
+                            BY_INVENTORY = new By.ByLinkText("All Items"),
                             BY_ABOUT = new By.ByLinkText("About"),
                             BY_LOGOUT = new By.ByLinkText("Logout"),
+                            BY_CART = new By.ByClassName("shopping_cart_link"),
                             BY_TWITTER = new By.ByLinkText("Twitter"),
                             BY_FACEBOOK = new By.ByLinkText("Facebook"),
                             BY_LINKEDIN = new By.ByLinkText("LinkedIn");
