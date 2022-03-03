@@ -3,6 +3,9 @@ package com.feudaloverlords.swaglabs.pom;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+/**
+ * The links that are available on multiple pages in exactly the same way.
+ */
 public enum GlobalLinks implements LinksInterface{
     LOGOUT {
         @Override
@@ -62,12 +65,13 @@ public enum GlobalLinks implements LinksInterface{
             URL_TWITTER = "https://twitter.com/saucelabs",
             URL_FACEBOOK = "https://www.facebook.com/saucelabs",
             URL_LINKEDIN = "https://www.linkedin.com/company/sauce-labs/";
-    private static final By BY_BURGER_MENU = new By.ByXPath("//*[@id=\"react-burger-menu-btn\"]"),
-                            BY_ALL_ITEMS = new By.ByLinkText("All Items"),
-                            BY_ABOUT = new By.ByLinkText("About"),
-                            BY_LOGOUT = new By.ByLinkText("Logout"),
-                            BY_CART = new By.ByClassName("shopping_cart_link"),
-                            BY_TWITTER = new By.ByLinkText("Twitter"),
-                            BY_FACEBOOK = new By.ByLinkText("Facebook"),
-                            BY_LINKEDIN = new By.ByLinkText("LinkedIn");
+    private static final By
+            BY_BURGER_MENU = new By.ByXPath("//*[@id=\"react-burger-menu-btn\"]"),
+            BY_ALL_ITEMS = new By.ByLinkText("All Items"),
+            BY_ABOUT = new By.ByLinkText("About"),
+            BY_LOGOUT = new By.ByLinkText("Logout"),
+            BY_CART = new By.ByClassName("shopping_cart_link"),
+            BY_TWITTER = new By.ByLinkText("Twitter"),
+            BY_FACEBOOK = new By.ByLinkText("Facebook"),
+            BY_LINKEDIN = new By.ByLinkText("LinkedIn");
 }

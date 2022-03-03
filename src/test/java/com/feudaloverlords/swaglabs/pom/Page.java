@@ -2,6 +2,9 @@ package com.feudaloverlords.swaglabs.pom;
 
 import org.openqa.selenium.WebDriver;
 
+/**
+ * The base Page that other Page classes extend. Anonymous subclasses are also sometimes returned.
+ */
 public class Page {
     protected WebDriver driver;
     protected final String url;
