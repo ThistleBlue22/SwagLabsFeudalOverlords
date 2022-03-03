@@ -2,9 +2,9 @@ package com.feudaloverlords.swaglabs.pom;
 
 import org.openqa.selenium.WebDriver;
 
-public abstract class Page {
-    private WebDriver driver;
-    private final String url;
+public class Page {
+    protected WebDriver driver;
+    protected final String url;
 
     protected Page(WebDriver driver, String url) {
         this.driver = driver;
@@ -17,5 +17,21 @@ public abstract class Page {
 
     public String getUrl() {
         return url;
+    }
+
+    /**
+     * Navigates to the given page.
+     * @param l A member of an enum that implements Links (either the calling class's nested Links enum or GlobalLinks as appropriate).
+     * @return The page the given link navigates the user to.
+     */
+    public Page getPage(LinksInterface l) {
+        return l.getPage(driver);
+    }
+
+    public static boolean isCookieSet(WebDriver webDriver) {
+        if (webDriver.manage().getCookieNamed("session-username") != null){
+            return true;
+        }
+        return false;
     }
 }
