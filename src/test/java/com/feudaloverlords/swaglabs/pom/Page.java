@@ -27,4 +27,11 @@ public class Page {
     public Page getPage(LinksInterface l) {
         return l.getPage(driver);
     }
+
+    public static boolean isCookieSet(WebDriver webDriver) {
+        if (webDriver.manage().getCookieNamed("session-username") != null){
+            return true;
+        }
+        return false;
+    }
 }
