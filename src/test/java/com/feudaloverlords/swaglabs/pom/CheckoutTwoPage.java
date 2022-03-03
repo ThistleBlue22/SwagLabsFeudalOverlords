@@ -6,11 +6,11 @@ import org.openqa.selenium.WebDriver;
 public class CheckoutTwoPage extends Page {
 
     public enum Links implements LinksInterface {
-        CHECKOUT_ONE {
+        INVENTORY {
             @Override
             public Page getPage(WebDriver driver) {
                 driver.findElement(By.xpath("//*[@id=\"cancel\"]")).click();
-                return new CheckoutOnePage(driver);
+                return new InventoryPage(driver);
             }
         },
         CHECKOUT_THREE {
@@ -20,15 +20,6 @@ public class CheckoutTwoPage extends Page {
                 return new CheckoutThreePage(driver);
             }
         },
-        CART {
-            @Override
-            public Page getPage(WebDriver driver) {
-                driver.findElement(By.xpath("//*[@id=\"cancel\"]")).click();
-                return new CartPage(driver);
-            }
-        },
-
-
     }
 
 

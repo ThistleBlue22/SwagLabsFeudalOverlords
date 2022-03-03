@@ -13,7 +13,7 @@ public class CheckoutOnePage extends Page {
                 return new CartPage(driver);
             }
         },
-        CHECKOUT_THREE {
+        CHECKOUT_TWO {
             @Override
             public Page getPage(WebDriver driver) {
                 driver.findElement(By.xpath("//*[@id=\"continue\"]")).click();
