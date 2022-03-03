@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public enum GlobalLinks implements LinksInterface{
-    HOMEPAGE {
+    LOGOUT {
         @Override
         public Page getPage(WebDriver driver) {
             driver.findElement(BY_BURGER_MENU).click();
@@ -12,7 +12,7 @@ public enum GlobalLinks implements LinksInterface{
             return new HomePage(driver);
         }
     },
-    INVENTORY {
+    ALL_ITEMS {
         @Override
         public Page getPage(WebDriver driver) {
             driver.findElement(BY_BURGER_MENU).click();
