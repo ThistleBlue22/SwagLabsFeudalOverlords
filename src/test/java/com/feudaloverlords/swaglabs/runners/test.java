@@ -14,7 +14,18 @@ import org.junit.runner.RunWith;
         //publish= true;
         )
 
-/*
+/*Built-in reporter plugins
+
+message
+progress
+pretty
+html
+json
+rerun
+junit
+testng
+
+//////////////////////////////////// Supported properties
 cucumber.ansi-colors.disabled=  # true or false. default: false
 cucumber.execution.dry-run=     # true or false. default: false
 cucumber.execution.limit=       # number of scenarios to execute (CLI only).
