@@ -27,22 +27,7 @@ public class CheckoutTwoPage extends Page {
                 return new CartPage(driver);
             }
         },
-        INVENTORY {
-            @Override
-            public Page getPage(WebDriver driver) {
-                driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
-                driver.findElement(By.xpath("//*[@id=\"inventory_sidebar_link\"]")).click();
-                return new InventoryPage(driver);
-            }
-        },
-        HOMEPAGE {
-            @Override
-            public Page getPage(WebDriver driver) {
-                driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
-                driver.findElement(By.xpath("//*[@id=\"logout_sidebar_link\"]")).click();
-                return new HomePage(driver);
-            }
-        }
+
 
     }
 
