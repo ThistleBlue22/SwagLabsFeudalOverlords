@@ -6,29 +6,22 @@ import org.openqa.selenium.WebDriver;
 public class CheckoutTwoPage extends Page {
 
     public enum Links implements LinksInterface {
-        CHECKOUT_ONE {
+        CANCEL {
             @Override
             public Page getPage(WebDriver driver) {
-                driver.findElement(By.xpath("//*[@id=\"cancel\"]")).click();
-                return new CheckoutOnePage(driver);
+                driver.findElement(BY_CANCEL).click();
+                return new InventoryPage(driver);
             }
         },
-        CHECKOUT_THREE {
+        FINISH {
             @Override
             public Page getPage(WebDriver driver) {
-                driver.findElement(By.xpath("//*[@id=\"finish\"]")).click();
+                driver.findElement(BY_FINISH).click();
                 return new CheckoutThreePage(driver);
             }
-        },
-        CART {
-            @Override
-            public Page getPage(WebDriver driver) {
-                driver.findElement(By.xpath("//*[@id=\"cancel\"]")).click();
-                return new CartPage(driver);
-            }
-        },
-
-
+        };
+        private static final By BY_CANCEL = new By.ByXPath("//*[@id=\"cancel\"]"),
+                BY_FINISH = new By.ByXPath("//*[@id=\"finish\"]");
     }
 
 
