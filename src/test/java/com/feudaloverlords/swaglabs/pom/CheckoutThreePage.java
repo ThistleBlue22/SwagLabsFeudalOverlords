@@ -6,13 +6,14 @@ import org.openqa.selenium.WebDriver;
 public class CheckoutThreePage extends Page {
 
     public enum Links implements LinksInterface {
-        INVENTORY {
+        BACK_HOME {
             @Override
             public Page getPage(WebDriver driver) {
-                driver.findElement(By.xpath("//*[@id=\"back-to-products\"]")).click();
+                driver.findElement(BY_BACK_HOME).click();
                 return new InventoryPage(driver);
             }
-        },
+        };
+        private static final By BY_BACK_HOME = new By.ByXPath("//*[@id=\"back-to-products\"]");
 
 
     }
