@@ -16,7 +16,7 @@ public enum GlobalLinks implements LinksInterface{
         @Override
         public Page getPage(WebDriver driver) {
             driver.findElement(BY_BURGER_MENU).click();
-            driver.findElement(BY_INVENTORY).click();
+            driver.findElement(BY_ALL_ITEMS).click();
             return new InventoryPage(driver);
         }
     },
@@ -63,7 +63,7 @@ public enum GlobalLinks implements LinksInterface{
             URL_FACEBOOK = "https://www.facebook.com/saucelabs",
             URL_LINKEDIN = "https://www.linkedin.com/company/sauce-labs/";
     private static final By BY_BURGER_MENU = new By.ByXPath("//*[@id=\"react-burger-menu-btn\"]"),
-                            BY_INVENTORY = new By.ByLinkText("All Items"),
+                            BY_ALL_ITEMS = new By.ByLinkText("All Items"),
                             BY_ABOUT = new By.ByLinkText("About"),
                             BY_LOGOUT = new By.ByLinkText("Logout"),
                             BY_CART = new By.ByClassName("shopping_cart_link"),
