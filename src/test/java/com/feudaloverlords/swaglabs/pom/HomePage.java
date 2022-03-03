@@ -22,7 +22,7 @@ public class HomePage extends Page {
 
     public HomePage(WebDriver driver) {
         super(driver, "https://www.saucedemo.com/");
-        driver.get(url);
+        driver.get(URL);
     }
 
     /**
