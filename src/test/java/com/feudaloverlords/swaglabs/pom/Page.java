@@ -19,6 +19,11 @@ public class Page {
         return url;
     }
 
+    /**
+     * Navigates to the given page.
+     * @param l A member of an enum that implements Links (either the calling class's nested Links enum or GlobalLinks as appropriate).
+     * @return The page the given link navigates the user to.
+     */
     public Page getPage(LinksInterface l) {
         return l.getPage(driver);
     }
