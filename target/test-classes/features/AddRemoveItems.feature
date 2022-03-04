@@ -8,7 +8,7 @@
     When I click on the Add to cart button for an item
     Then The shopping cart badge should show 1
     And Cart page should include the item
-  
+
   @AddItemThroughInventoryPage
   Scenario: I click on the Add to Cart Button
     Given I am in the inventory page
