@@ -3,7 +3,7 @@ package com.feudaloverlords.swaglabs.pom;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class InventoryItemPage extends Page{
+public class InventoryItemPage extends ShopPage{
 
     public enum Links implements LinksInterface {
         BACK_TO_PRODUCTS {

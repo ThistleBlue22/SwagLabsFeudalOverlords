@@ -3,7 +3,7 @@ package com.feudaloverlords.swaglabs.pom;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CartPage extends Page {
+public class CartPage extends ShopPage {
 
     public enum Links implements LinksInterface {
         CONTINUE_SHOPPING {
