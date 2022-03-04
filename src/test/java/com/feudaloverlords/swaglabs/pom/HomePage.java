@@ -31,7 +31,7 @@ public class HomePage extends Page {
     private static final By
             BY_USERNAME = new By.ById("user-name"),
             BY_PASSWORD = new By.ById("password"),
-            BY_ERROR_MESSAGE_CONTAINER = new By.ByClassName("error-message-container error"),
+            BY_ERROR_MESSAGE_CONTAINER = new By.ByClassName("error-message-container"),
             BY_H3 = new By.ByTagName("h3");
 
 
