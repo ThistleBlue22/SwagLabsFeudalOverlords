@@ -50,10 +50,10 @@ public class InventoryPage extends ShopPage{
      * Checks if all item images are the dog.
      * @return true if all images are the dog, otherwise false.
      */
-    public boolean areAllImagesTheDog() {
+    public static boolean areAllImagesTheDog() {
         return driver.findElements(BY_IMG).stream()
                 .filter(w -> w.getTagName().equals("img"))
-                .allMatch(w -> w.getAttribute("src").equals(IMG_SOURCE_DOG));
+                .allMatch(w -> w.getAttribute("src").contains(IMG_SOURCE_DOG));
     }
 
     /**

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
  * The base Page that other Page classes extend. Anonymous subclasses are also sometimes returned.
  */
 public class Page {
-    protected WebDriver driver;
+    protected static WebDriver driver;
     protected final String URL;
     protected final By BY_CART_BADGE = new By.ByClassName("shopping_cart_badge");
 
