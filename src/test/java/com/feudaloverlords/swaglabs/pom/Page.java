@@ -1,6 +1,7 @@
 package com.feudaloverlords.swaglabs.pom;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -34,9 +35,20 @@ public class Page {
     }
 
     public static boolean isCookieSet(WebDriver webDriver) {
-        if (webDriver.manage().getCookieNamed("session-username") != null){
-            return true;
+        return (webDriver.manage().getCookieNamed("session-username") != null);
+    }
+
+    /**
+     * Retrieves the number on the cart badge.
+     * @return the number on the cart badge, or 0 if there isn't one.
+     */
+    public int getCartBadgeNumber() {
+        int cartBadgeNumber = 0;
+        try {
+            cartBadgeNumber = Integer.parseInt(driver.findElement(BY_CART_BADGE).getText());
+        } catch(NoSuchElementException e) {
+        } finally {
+            return cartBadgeNumber;
         }
-        return false;
     }
 }

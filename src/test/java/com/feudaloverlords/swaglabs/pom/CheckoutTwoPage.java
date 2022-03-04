@@ -30,18 +30,22 @@ public class CheckoutTwoPage extends Page {
     }
 
     public double getItemTotal (WebDriver webDriver){
-        double itemTotal = Double.valueOf(driver.findElement(new By.ByClassName("summary_subtotal_label")).getText());
-        return itemTotal;
+        return Double.parseDouble(getDoubleString("//*[@id=\"checkout_summary_container\"]/div/div[2]/div[5]"));
     }
 
     public double getTotal (WebDriver webDriver){
-        double total = Double.valueOf(driver.findElement(new By.ByClassName("summary_total_label")).getText());
-        return total;
+        return Double.parseDouble(getDoubleString("//*[@id=\"checkout_summary_container\"]/div/div[2]/div[6]"));
     }
 
     public double getTax (WebDriver webDriver){
-        double tax = Double.valueOf(driver.findElement(new By.ByClassName("summary_tax_label")).getText());
-        return tax;
+        return Double.parseDouble(getDoubleString("//*[@id=\"checkout_summary_container\"]/div/div[2]/div[7]"));
+    }
+
+    private String getDoubleString(String xpath)
+    {
+        String extracted = String.valueOf(driver.findElement(new By.ByXPath(xpath)).getText());
+        String[] split = extracted.split("\\$");
+        return split[1];
     }
 
 
