@@ -12,6 +12,7 @@ Feature: The ability for a user to check out
 
   @UserCanViewTheOrderPrice
   Scenario: I have entered my checkout details and need to view the order price
+    Given I have an item in the cart
     Given that I am on step two of the checkout process
     Then the summary total should be equal to the summary subtotal plus tax
 

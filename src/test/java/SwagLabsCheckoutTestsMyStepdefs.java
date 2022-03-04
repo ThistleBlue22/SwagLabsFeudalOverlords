@@ -79,12 +79,18 @@ public class SwagLabsCheckoutTestsMyStepdefs
     {
         double expectedTotal = checkoutTwoPage.getItemTotal(driver) + checkoutTwoPage.getTax(driver);
 
-        Assertions.assertEquals(expectedTotal, (double)checkoutTwoPage.getTotal(driver));
+        Assertions.assertEquals(expectedTotal, checkoutTwoPage.getTotal(driver));
     }
 
     @Then("click the Finish button")
     public void clickTheFinishButton()
     {
         CheckoutTwoPage.Links.FINISH.getPage(driver);
+    }
+
+    @Given("I have an item in the cart")
+    public void iHaveAnItemInTheCart()
+    {
+
     }
 }
