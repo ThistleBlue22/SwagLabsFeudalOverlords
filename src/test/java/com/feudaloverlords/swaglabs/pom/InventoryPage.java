@@ -52,6 +52,7 @@ public class InventoryPage extends ShopPage{
      */
     public boolean areAllImagesTheDog() {
         return driver.findElements(BY_IMG).stream()
+                .filter(w -> w.getTagName().equals("img"))
                 .allMatch(w -> w.getAttribute("src").equals(IMG_SOURCE_DOG));
     }
 
