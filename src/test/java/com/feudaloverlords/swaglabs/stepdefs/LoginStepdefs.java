@@ -60,8 +60,6 @@ public class LoginStepdefs {
     public void iHaveAnIncorrectUsernameAndCorrectPassword() {
     }
 
-
-
     @And("I have an correct username and incorrect password")
     public void iHaveAnCorrectUsernameAndIncorrectPassword() {
     }
