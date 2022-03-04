@@ -24,7 +24,6 @@ public class InventoryStepDefs {
         webDriver = DriverFactory.get();
         homePage = new HomePage(webDriver);
     }
-
 //    public static void main(String[] args) {
 //        webDriver = DriverFactory.get();
 //        homePage = new HomePage(webDriver);
@@ -46,10 +45,10 @@ public class InventoryStepDefs {
     public void ShoppingCartBadgeShouldIncrease() {
         Assertions.assertEquals(1,inventoryPage.getCartBadgeNumber());
     }
-    @And("Cart page should include the item")
-    public void CartPageShouldIncludeItem() {
-        CartPage cartPage = (CartPage) inventoryPage.getPage(GlobalLinks.CART);
-    }  
+//    @And("Cart page should include the item")
+//    public void CartPageShouldIncludeItem() {
+//        CartPage cartPage = (CartPage) inventoryPage.getPage(GlobalLinks.CART);
+//    }
 
 
 
