@@ -12,20 +12,6 @@ public class InventoryItemPage extends Page{
                 driver.findElement(BY_BACK_TO_PRODUCTS).click();
                 return new InventoryPage(driver);
             }
-        },
-        ADD_TO_CART {
-            @Override
-            public Page getPage(WebDriver driver) {
-                driver.findElement(BY_BACK_TO_PRODUCTS).click();
-                return new InventoryItemPage(driver);
-            }
-        },
-        REMOVE {
-            @Override
-            public Page getPage(WebDriver driver) {
-                driver.findElement(BY_REMOVE).click();
-                return new InventoryItemPage(driver);
-            }
         };
         private static final By BY_BACK_TO_PRODUCTS = new By.ByXPath("//*[@id=\"back-to-products\"]"),
                 BY_ADD_TO_CART = new By.ByXPath("///*[@id=\"add-to-cart-sauce-labs-bike-light\"]"),
