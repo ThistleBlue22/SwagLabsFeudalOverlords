@@ -31,29 +31,18 @@ public class LoginStepdefs {
         page.login(user);
     }
 
-    @Then("The resulting page should be that of a logged in user")
-    public void theResultingPageShouldBeThatOfALoggedInUser() {
-        Assertions.assertTrue(Page.isCookieSet(driver));
+    @And("I have the username problem_user and password for that account")
+    public void iHaveTheUsernameProblem_userAndPasswordForThatAccount() {
+        user = User.PROBLEM;
     }
 
+    @And("I have the username performance_glitch_user and password for that account")
+    public void iHaveTheUsernamePerformance_glitch_userAndPasswordForThatAccount() {
+        user = User.PERFORMANCE_GLITCH;
+    }
     @And("I have a locked out username and their password")
     public void iHaveALockedOutUsernameAndTheirPassword() {
-    }
-
-    @Then("The browser URL will not change and an error message will be displayed")
-    public void theBrowserURLWillNotChangeAndAnErrorMessageWillBeDisplayed() {
-    }
-
-    @Then("The resulting page should be that of a logged in user with issues regarding product images")
-    public void theResultingPageShouldBeThatOfALoggedInUserWithIssuesRegardingProductImages() {
-    }
-
-    @Then("The resulting outcome should be a seeming performance issue which is resolved after a five second wait")
-    public void theResultingOutcomeShouldBeASeemingPerformanceIssueWhichIsResolvedAfterASecondWait() {
-    }
-
-    @And("I have an incorrect username and incorrect password")
-    public void iHaveAnIncorrectUsernameAndIncorrectPassword() {
+        user = User.LOCKED_OUT;
     }
 
     @And("I have an incorrect username and correct password")
@@ -62,5 +51,35 @@ public class LoginStepdefs {
 
     @And("I have an correct username and incorrect password")
     public void iHaveAnCorrectUsernameAndIncorrectPassword() {
+    }
+
+    @Then("The browser URL will not change and an error message will be displayed")
+    public void theBrowserURLWillNotChangeAndAnErrorMessageWillBeDisplayed() {
+        Assertions.assertEquals("https://www.saucedemo.com/", driver.getCurrentUrl());
+
+    }
+
+    @Then("The resulting page should be that of a logged in user with issues regarding product images")
+    public void theResultingPageShouldBeThatOfALoggedInUserWithIssuesRegardingProductImages() {
+
+    }
+    @Then("The resulting page should be that of a logged in user")
+    public void theResultingPageShouldBeThatOfALoggedInUser() {
+        Assertions.assertTrue(Page.isCookieSet(driver));
+    }
+
+    @Then("The resulting outcome should be a seeming performance issue which is resolved after a five second wait")
+    public void theResultingOutcomeShouldBeASeemingPerformanceIssueWhichIsResolvedAfterASecondWait() {
+
+    }
+
+    @And("I have an incorrect username and incorrect password")
+    public void iHaveAnIncorrectUsernameAndIncorrectPassword() {
+
+    }
+
+    @And("The browser will close")
+    public void theBrowserWillClose() {
+        DriverFactory.closeDriver();
     }
 }

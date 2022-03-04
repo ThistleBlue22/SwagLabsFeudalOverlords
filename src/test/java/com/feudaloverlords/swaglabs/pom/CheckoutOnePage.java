@@ -30,7 +30,7 @@ public class CheckoutOnePage extends Page {
         super(driver, "https://www.saucedemo.com/checkout-step-one.html");
     }
 
-    public CheckoutTwoPage checkout(String firstName, String lastName, String postCode){
+    public CheckoutTwoPage continueCheckout (String firstName, String lastName, String postCode){
         driver.findElement(By.xpath("//*[@id=\"first-name\"]")).sendKeys(firstName);
         driver.findElement(By.xpath("//*[@id=\"last-name\"]")).sendKeys(lastName);
         driver.findElement(By.xpath("//*[@id=\"postal-code\"]")).sendKeys(postCode);
