@@ -1,4 +1,4 @@
-@Feature: Add/Remove items
+Feature: Add/Remove items
   Add and Remove items from cart
 
   @AddIFirstItemToCart
