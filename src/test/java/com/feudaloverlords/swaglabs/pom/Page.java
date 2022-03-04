@@ -1,22 +1,27 @@
 package com.feudaloverlords.swaglabs.pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+/**
+ * The base Page that other Page classes extend. Anonymous subclasses are also sometimes returned.
+ */
 public class Page {
     protected WebDriver driver;
-    protected final String url;
+    protected final String URL;
+    protected final By BY_CART_BADGE = new By.ByClassName("shopping_cart_badge");
 
     protected Page(WebDriver driver, String url) {
         this.driver = driver;
-        this.url = url;
+        URL = url;
     }
 
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
 
-    public String getUrl() {
-        return url;
+    public String getURL() {
+        return URL;
     }
 
     /**

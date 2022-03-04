@@ -22,9 +22,14 @@ public class HomePage extends Page {
 
     public HomePage(WebDriver driver) {
         super(driver, "https://www.saucedemo.com/");
-        driver.get(url);
+        driver.get(URL);
     }
 
+    /**
+     * Logs in as the given user.
+     * @param u The user to log in as.
+     * @return The inventory page the site navigates to after logging in.
+            */
     public InventoryPage login(User u) {
         driver.findElement(BY_USERNAME).sendKeys(u.USERNAME);
         driver.findElement(BY_PASSWORD).sendKeys(u.PASSWORD);

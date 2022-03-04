@@ -1,5 +1,8 @@
 package com.feudaloverlords.swaglabs.pom;
 
+/**
+ * The enum that defines the possible users of the site.
+ */
 public enum User {
     STANDARD("standard_user"),
     LOCKED_OUT("locked_out_user"),
