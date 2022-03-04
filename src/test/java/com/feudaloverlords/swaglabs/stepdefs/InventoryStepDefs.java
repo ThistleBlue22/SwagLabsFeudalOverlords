@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
 import javax.sound.midi.Soundbank;
@@ -43,12 +44,12 @@ public class InventoryStepDefs {
     }
     @Then("The shopping cart badge should increase")
     public void ShoppingCartBadgeShouldIncrease() {
-        inventoryPage.getCartBadgeNumber();
+        Assertions.assertEquals(1,inventoryPage.getCartBadgeNumber());
     }
     @And("Cart page should include the item")
     public void CartPageShouldIncludeItem() {
         CartPage cartPage = (CartPage) inventoryPage.getPage(GlobalLinks.CART);
-    }
+    }  
 
 
 
