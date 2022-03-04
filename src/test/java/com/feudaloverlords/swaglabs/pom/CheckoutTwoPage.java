@@ -28,4 +28,22 @@ public class CheckoutTwoPage extends Page {
     public CheckoutTwoPage(WebDriver driver) {
         super(driver, "https://www.saucedemo.com/checkout-step-two.html");
     }
+
+    public double getItemTotal (WebDriver webDriver){
+        double itemTotal = Double.valueOf(driver.findElement(new By.ByClassName("summary_subtotal_label")).getText());
+        return itemTotal;
+    }
+
+    public double getTotal (WebDriver webDriver){
+        double total = Double.valueOf(driver.findElement(new By.ByClassName("summary_total_label")).getText());
+        return total;
+    }
+
+    public double getTax (WebDriver webDriver){
+        double tax = Double.valueOf(driver.findElement(new By.ByClassName("summary_tax_label")).getText());
+        return tax;
+    }
+
+
+
 }
