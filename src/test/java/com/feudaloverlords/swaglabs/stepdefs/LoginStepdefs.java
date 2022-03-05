@@ -1,6 +1,7 @@
 package com.feudaloverlords.swaglabs.stepdefs;
 
 import com.feudaloverlords.swaglabs.pom.HomePage;
+import com.feudaloverlords.swaglabs.pom.InventoryPage;
 import com.feudaloverlords.swaglabs.pom.Page;
 import com.feudaloverlords.swaglabs.pom.User;
 import com.feudaloverlords.swaglabs.utilities.DriverFactory;
@@ -9,6 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginStepdefs {
@@ -47,35 +49,37 @@ public class LoginStepdefs {
 
     @And("I have an incorrect username and correct password")
     public void iHaveAnIncorrectUsernameAndCorrectPassword() {
+        user = User.INCORRECT_USERNAME;
     }
 
     @And("I have an correct username and incorrect password")
     public void iHaveAnCorrectUsernameAndIncorrectPassword() {
+        user = User.INCORRECT_PASSWORD;
     }
 
     @Then("The browser URL will not change and an error message will be displayed")
     public void theBrowserURLWillNotChangeAndAnErrorMessageWillBeDisplayed() {
-        Assertions.assertEquals("https://www.saucedemo.com/", driver.getCurrentUrl());
-
+        if (user.name().equals(HomePage.Error.LOCKED_OUT.name())){
+            Assertions.assertTrue(HomePage.isErrorMessagePresent(HomePage.Error.LOCKED_OUT));
+        }
+        else {
+            Assertions.assertTrue(HomePage.isErrorMessagePresent(HomePage.Error.INVALID_LOGIN));
+        }
     }
 
     @Then("The resulting page should be that of a logged in user with issues regarding product images")
     public void theResultingPageShouldBeThatOfALoggedInUserWithIssuesRegardingProductImages() {
-
+        Assertions.assertTrue(InventoryPage.areAllImagesTheDog());
     }
+
     @Then("The resulting page should be that of a logged in user")
     public void theResultingPageShouldBeThatOfALoggedInUser() {
         Assertions.assertTrue(Page.isCookieSet(driver));
     }
 
-    @Then("The resulting outcome should be a seeming performance issue which is resolved after a five second wait")
-    public void theResultingOutcomeShouldBeASeemingPerformanceIssueWhichIsResolvedAfterASecondWait() {
-
-    }
-
     @And("I have an incorrect username and incorrect password")
     public void iHaveAnIncorrectUsernameAndIncorrectPassword() {
-
+        user = User.INCORRECT_USERNAME_AND_PASSWORD;
     }
 
     @And("The browser will close")

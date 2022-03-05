@@ -56,7 +56,7 @@ public class HomePage extends Page {
      * @param error The error to check for.
      * @return true if the given message is present, otherwise false.
      */
-    private boolean isErrorMessagePresent(Error error) {
+    public static boolean isErrorMessagePresent(Error error) {
         boolean messagePresent = false;
         try {
             messagePresent = driver.findElement(BY_ERROR_MESSAGE_CONTAINER).findElement(BY_H3).getText().equals(error.MESSAGE);
