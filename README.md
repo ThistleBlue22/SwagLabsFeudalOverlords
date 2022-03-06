@@ -248,6 +248,12 @@ In configuration properties, we have a key called "browser" and the value can be
 
 ### **Recommendations**
 
+Upon looking through the website and at the web elements it became clear that the website excluded unique identifiers that would have made the testing of the website easier. As a flat recommendation for any future websites and for the current website we would suggest the inclusion of at least classes on the elements in order to make the access of them easier when testing.
+
+On top of this, the navigation of the website in some spots feels off. A particular instance of this occurs with the drop down sorting menu, within the selectable area that appears to the user there is a section that is not selectable to the user, the downward arrow which indicates that there is the drop down menu is not clickable. This is deceiving to user and may make them believe that there is no other sorting of the items. It is therefore recommended that this be altered to include this indicator in the selectable area for the drop down menu.
+
+For the final two suggestions, I'd like to combine them together as the suggestions that goes without saying, but will be said here. The "problem_user" and the "performance_issue_user", sort them out. You know what I mean, the Dogs and the freeze when getting to the main product page respectively. You want to ensure that all users have a pleasant experience with the website and the service and therefore working out bugs and fixing performance issues for the users will always be high on the priority list of things to fix to contribute towards a better website experience.
+
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
