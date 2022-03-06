@@ -200,6 +200,8 @@ In feature files, Gherkin language was used. The keywords "Given", "When", "Then
 
 #### **Step Definitions**
 
+What we wrote in feature files were implemented in step definitions by creating objects of POM classes and using Driver Factory to provide automated browser.
+
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
@@ -207,6 +209,8 @@ In feature files, Gherkin language was used. The keywords "Given", "When", "Then
 <br/>
 
 #### **Runners**
+
+In runners, we can configure our cucumber tests with cucumber options. We can also generate reports such as html, json etc.
 
 <br/>
 <div align="left">
