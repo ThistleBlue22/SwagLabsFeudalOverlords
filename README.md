@@ -240,6 +240,10 @@ In configuration properties, we have a key called "browser" and the value can be
 
 ### **Assumptions**
 
+Some assumptions throughout the project needed to be made, such as the fact that there were only four user accounts that would produce anything other than an unknown user error and that all of the user accounts shared a password. Outside of this, the assumption that there was issues with the problem_user account, even ones that went undiscovered.
+
+The assumption that the website was intended to be tested and that as a result the issues that may come from a normal website on the internet, the bottlenecks of Denial of Service Attack prevention could be ignored and as such a good amount of requests to the server and website could be handled for testing purposes.
+
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
