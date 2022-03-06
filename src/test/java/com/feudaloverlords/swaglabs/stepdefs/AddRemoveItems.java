@@ -59,10 +59,6 @@ public class AddRemoveItems {
         }
     }
 
-    @Given("I am in an item's page")
-    public void i_am_in_an_item_s_page() {
-    }
-
     @When("I click on the Add to cart button for that item")
     public void i_click_on_the_add_to_cart_button_for_that_item() {
         //  new InventoryPage(DriverFactory.get()).addItemToCart(Item.BIKE_LIGHT);
