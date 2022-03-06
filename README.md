@@ -171,3 +171,89 @@ To be able to use this framework with 3 different browsers, we need to add 3 dif
     <b><a href="#table-of-contents">↥ Back to top</a></b>
 </div>
 <br/>
+
+### **Page Object Model Classes**
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
+### **Behaviour-driven Development Tests**
+
+BDD is the approach that can be used to generate tests can be understood from even non-technical people.
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
+#### **Feature Files**
+
+In feature files, Gherkin language was used. The keywords "Given", "When", "Then" etc. were used to generate test scenarios based on the acceptance criteria in user stories. They make tests more understandable for non-technical people. We try to use common methods as much as we can so that it makes easier to create new test scenarios effortlessly. 
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
+#### **Step Definitions**
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
+#### **Runners**
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
+### **Driver Factory Class**
+
+As mentioned before, Driver Factory class was created in Singleton Pattern so that we can make sure we are working in the same browser. We have get method which is public to call from different class so that we have browser which is specified by configuration properties file. We also have in this class private constructor that prevent user from creating an object of the class. closeDriver method close the browser. All methods are static, so we can use them in class level without generating an object.
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
+#### **Configuration Properties**
+
+In configuration properties, we have a key called "browser" and the value can be 6 different values. These are "chrome", "chrome-headless", "firefox", "firefox-headless", "edge", "edge-headless". Configuration Reader class reads this value from the file.
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
+### **Assumptions**
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
+### **Recommendations**
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
+### **How to use the project**
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
