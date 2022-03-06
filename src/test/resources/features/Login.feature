@@ -1,3 +1,4 @@
+@all
 Feature: Login
   Simple login page that takes a username and password
 
