@@ -10,11 +10,12 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         //dryRun = true,
         features = "src/test/resources/features",
-        glue = {"com.feudaloverlords.swaglabs.stepdefs"},
+        glue = {"com/feudaloverlords/swaglabs/stepdefs"},
         //summary, message, pretty
         plugin = {"pretty", "html:target/testReport.html", "json:target/jsonReport.json"},
         //tags=" add tag, preferably epics",
-        publish = true
+        publish = true,
+        tags = "@all"
 )
 
 public class TestDriver {
