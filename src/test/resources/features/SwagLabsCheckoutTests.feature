@@ -1,3 +1,4 @@
+@all
 Feature: The ability for a user to check out
 
   Background:
