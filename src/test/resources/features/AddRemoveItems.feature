@@ -1,4 +1,4 @@
-@add
+@add, @all
 Feature: Add/Remove items
   Add and Remove items from cart
 
@@ -27,7 +27,6 @@ Feature: Add/Remove items
 
   @AddItemThroughItemPage
   Scenario: I click on the Add to Cart Button
-    Given I am in an item's page
     When My shopping cart is empty
     When I click on the Add to cart button for that item
     Then The shopping cart badge should increase
@@ -43,7 +42,6 @@ Feature: Add/Remove items
 
   @RemoveItemThoughItemPage
   Scenario: I click on the Remove Button 2
-    Given I am in an item's page
     And I have clicked on the Add to Cart Button
     When I click on the remove button from item page
     Then The shopping cart badge should decrease
