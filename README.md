@@ -174,6 +174,47 @@ To be able to use this framework with 3 different browsers, we need to add 3 dif
 
 ### **Page Object Model Classes**
 
+Page Object Model, also known as POM, is a design pattern in Selenium that creates an object repository for storing all 
+web elements. It is useful in reducing code duplication and improves test case maintenance. In Page Object Model, 
+you must consider each web page of an application as a class file. In this project the complete Page Object Model (POM) 
+classes used are shown in the figure below:
+
+<img src="readmeImages/pomc1.png">
+
+Checkout Pages:
+* These are to navigate from pages with the steps the user takes to check out. 
+* They also extend from 'Page'. 
+* They are also used to create methods used within the classes, for example getting the tax uses this method in 
+checkout step 2:
+
+<img src="readmeImages/pomc2.png">
+
+Enum Classes:
+* 'User' enum class is used to define the possible users of the site.
+* 'Item' enum class is used to define the different products available to the user.
+* 'GlobalLinks' enum class is used to define the links that are available on multiple pages and are exactly the same.
+
+Links Interface Class:
+* The interface that navigable Links implement enums.
+
+Home Page Class:
+* This class represents the login page.
+* It extends  from Page class.
+
+Inventory Classes:
+* 'InventoryPage' represents the dropdown offered on the Inventory page to sort the products. This class extends the 
+'ShopPage' super class.
+* 'InventoryItemPage' represents the page that the user sees when an item is clicked on. This class also extends the 
+'ShopPage' super class.
+
+Cart Page Class:
+* This class represent the page the user sees when the cart icon is clicked on.
+* This class extends the 'ShopPage' super class.
+
+Shop Page Class:
+* This class is a super class which can be extended from.
+* 'ShopPage' class represents adding and removing an item from the cart.
+
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
@@ -240,6 +281,10 @@ In configuration properties, we have a key called "browser" and the value can be
 
 ### **Assumptions**
 
+Some assumptions throughout the project needed to be made, such as the fact that there were only four user accounts that would produce anything other than an unknown user error and that all of the user accounts shared a password. Outside of this, the assumption that there was issues with the problem_user account, even ones that went undiscovered.
+
+The assumption that the website was intended to be tested and that as a result the issues that may come from a normal website on the internet, the bottlenecks of Denial of Service Attack prevention could be ignored and as such a good amount of requests to the server and website could be handled for testing purposes.
+
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
@@ -247,6 +292,12 @@ In configuration properties, we have a key called "browser" and the value can be
 <br/>
 
 ### **Recommendations**
+
+Upon looking through the website and at the web elements it became clear that the website excluded unique identifiers that would have made the testing of the website easier. As a flat recommendation for any future websites and for the current website we would suggest the inclusion of at least classes on the elements in order to make the access of them easier when testing.
+
+On top of this, the navigation of the website in some spots feels off. A particular instance of this occurs with the drop down sorting menu, within the selectable area that appears to the user there is a section that is not selectable to the user, the downward arrow which indicates that there is the drop down menu is not clickable. This is deceiving to user and may make them believe that there is no other sorting of the items. It is therefore recommended that this be altered to include this indicator in the selectable area for the drop down menu.
+
+For the final two suggestions, I'd like to combine them together as the suggestions that goes without saying, but will be said here. The "problem_user" and the "performance_issue_user", sort them out. You know what I mean, the Dogs and the freeze when getting to the main product page respectively. You want to ensure that all users have a pleasant experience with the website and the service and therefore working out bugs and fixing performance issues for the users will always be high on the priority list of things to fix to contribute towards a better website experience.
 
 <br/>
 <div align="left">
@@ -265,6 +316,7 @@ We can also have image in failed tests as you can see below. This test is failed
 ![image-failedtest](https://i.imgur.com/M9ccB5D.png)
 
 In summary, you can test the website more easily after you created this framework by the help of POM classes and reusable Gherkin statements which is the tool of Behavioural-driven development framework. 
+
 
 <br/>
 <div align="left">
