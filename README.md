@@ -315,6 +315,10 @@ We can also have image in failed tests as you can see below. This test is failed
 
 ![image-failedtest](https://i.imgur.com/M9ccB5D.png)
 
+We can see which tests passed after running @all in TestDriver class. As you can see in the image below, they passed.
+
+<img src="readmeImages/test1.png">
+
 In summary, you can test the website more easily after you created this framework by the help of POM classes and reusable Gherkin statements which is the tool of Behavioural-driven development framework. 
 
 
