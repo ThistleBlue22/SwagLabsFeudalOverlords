@@ -174,6 +174,47 @@ To be able to use this framework with 3 different browsers, we need to add 3 dif
 
 ### **Page Object Model Classes**
 
+Page Object Model, also known as POM, is a design pattern in Selenium that creates an object repository for storing all 
+web elements. It is useful in reducing code duplication and improves test case maintenance. In Page Object Model, 
+you must consider each web page of an application as a class file. In this project the complete Page Object Model (POM) 
+classes used are shown in the figure below:
+
+<img src="readmeImages/pomc1.png">
+
+Checkout Pages:
+* These are to navigate from pages with the steps the user takes to check out. 
+* They also extend from 'Page'. 
+* They are also used to create methods used within the classes, for example getting the tax uses this method in 
+checkout step 2:
+
+<img src="readmeImages/pomc2.png">
+
+Enum Classes:
+* 'User' enum class is used to define the possible users of the site.
+* 'Item' enum class is used to define the different products available to the user.
+* 'GlobalLinks' enum class is used to define the links that are available on multiple pages and are exactly the same.
+
+Links Interface Class:
+* The interface that navigable Links implement enums.
+
+Home Page Class:
+* This class represents the login page.
+* It extends  from Page class.
+
+Inventory Classes:
+* 'InventoryPage' represents the dropdown offered on the Inventory page to sort the products. This class extends the 
+'ShopPage' super class.
+* 'InventoryItemPage' represents the page that the user sees when an item is clicked on. This class also extends the 
+'ShopPage' super class.
+
+Cart Page Class:
+* This class represent the page the user sees when the cart icon is clicked on.
+* This class extends the 'ShopPage' super class.
+
+Shop Page Class:
+* This class is a super class which can be extended from.
+* 'ShopPage' class represents adding and removing an item from the cart.
+
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
@@ -275,6 +316,7 @@ We can also have image in failed tests as you can see below. This test is failed
 ![image-failedtest](https://i.imgur.com/M9ccB5D.png)
 
 In summary, you can test the website more easily after you created this framework by the help of POM classes and reusable Gherkin statements which is the tool of Behavioural-driven development framework. 
+
 
 <br/>
 <div align="left">
