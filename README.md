@@ -281,6 +281,10 @@ In configuration properties, we have a key called "browser" and the value can be
 
 ### **Assumptions**
 
+Some assumptions throughout the project needed to be made, such as the fact that there were only four user accounts that would produce anything other than an unknown user error and that all of the user accounts shared a password. Outside of this, the assumption that there was issues with the problem_user account, even ones that went undiscovered.
+
+The assumption that the website was intended to be tested and that as a result the issues that may come from a normal website on the internet, the bottlenecks of Denial of Service Attack prevention could be ignored and as such a good amount of requests to the server and website could be handled for testing purposes.
+
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
@@ -288,6 +292,12 @@ In configuration properties, we have a key called "browser" and the value can be
 <br/>
 
 ### **Recommendations**
+
+Upon looking through the website and at the web elements it became clear that the website excluded unique identifiers that would have made the testing of the website easier. As a flat recommendation for any future websites and for the current website we would suggest the inclusion of at least classes on the elements in order to make the access of them easier when testing.
+
+On top of this, the navigation of the website in some spots feels off. A particular instance of this occurs with the drop down sorting menu, within the selectable area that appears to the user there is a section that is not selectable to the user, the downward arrow which indicates that there is the drop down menu is not clickable. This is deceiving to user and may make them believe that there is no other sorting of the items. It is therefore recommended that this be altered to include this indicator in the selectable area for the drop down menu.
+
+For the final two suggestions, I'd like to combine them together as the suggestions that goes without saying, but will be said here. The "problem_user" and the "performance_issue_user", sort them out. You know what I mean, the Dogs and the freeze when getting to the main product page respectively. You want to ensure that all users have a pleasant experience with the website and the service and therefore working out bugs and fixing performance issues for the users will always be high on the priority list of things to fix to contribute towards a better website experience.
 
 <br/>
 <div align="left">
@@ -297,10 +307,16 @@ In configuration properties, we have a key called "browser" and the value can be
 
 ### **How to use the project**
 
-The TestDriver class is selected and run and completes all tests within this framework. The figure below will appear,
-showing the details of each test and evidence for the test passing:
+In this project, we have mainly 4 parts. These are POM classes, runners, step definitions, and feature files. If we want to locate a web element in any web page and create some reusable methods, the only thing we need to do is to create a pom class for each page. Therefore, we need to locate one time, and we can use them whenever we want. In feature files, we will have scenarios written in Gherkin language to be implemented in step definitions so that we can test the functionalities. In test driver, it is the centre that we can configure our testing. We can trigger our tests using annotations just above the Scenario or Feature keywords in feature files. We can just run our tests using tags keyword in cucumber options from TestDriver class. We can also generate reports and view them in reports folder that will be generated after tests run.  
 
-<img src="readmeImages/test1.png">
+![image-report](https://i.imgur.com/9Pb8NlC.png)
+
+We can also have image in failed tests as you can see below. This test is failed intentionally to be able to see the report with screenshot.
+
+![image-failedtest](https://i.imgur.com/M9ccB5D.png)
+
+In summary, you can test the website more easily after you created this framework by the help of POM classes and reusable Gherkin statements which is the tool of Behavioural-driven development framework. 
+
 
 <br/>
 <div align="left">
